@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LPU REGISTER</title>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="register.js"></script>
+	<style type="text/css">
+		body{
+  				background-image: url('https://images.unsplash.com/photo-1473091534298-04dcbce3278c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  				background-repeat: no-repeat;
+ 				background-attachment: fixed;
+  				background-size: 100% 100%;
+			 }
+		.Ca_font{
+			font-family: 'Roboto Slab', serif;
+			font-size: 20px;
+			}
+	</style>
+
+
+</head>
+<body>
+
+
+<div class="container Ca_font" style="padding-top: 5%">
+		<h2>Registration Form</h2>
+		<h5>Please fill your information (Use tab keys to move from one input field to the next) </h5>
+		<h6> <a href="index.html"> Go Back to Home </a></h6>		
+
+	        <div style="width: 75%; padding-top: 3%">
+	            <form>
+	            	<div class="form-group row">
+					    <label class="col-sm-3 col-form-label" for="username">Name</label>
+					    <div class="col-sm-4">
+					      <input type="text" class="form-control" id="fname" placeholder=" First Name" required onkeyup="fnamevalidate()">
+					    </div>
+					    <div class="col-sm-4">
+					      <input type="text" class="form-control" id="lname" placeholder="Last Name" onkeyup="lnamevalidate()">
+					    </div>
+					</div>
+
+	            	<div class="form-group row">
+					    <label class="col-sm-3 col-form-label" for="email" >Your Email</label>
+					    <div class="col-sm-8">
+					      <input type="email" class="form-control" id="email" placeholder="eg: hello@email.com" onkeyup="emailvalidate()" required>
+					    </div>
+					</div>
+
+	            	<div class="form-group row">
+					    <label class="col-sm-3 col-form-label">Phone</label>
+					    <div class="col-sm-2">
+								<select id="Code" name="Code" class="form-control" required>
+							    <option value="Other">+91 India</option>
+							    <option value="Request">+1 USA</option>
+						</select>
+					    </div>
+
+					    <div class="col-sm-3">
+					      <input type="text" class="form-control" id="ophone" Placeholder="Office" onkeyup="ophonenumber()" required>
+					    </div>
+
+					    <div class="col-sm-3">
+					      <input type="text" class="form-control" id="hphone" Placeholder="Home"  onkeyup="hphonenumber()" required>
+					    </div>
+					</div>
+					
+					<div class="form-group row">
+					    <label class="col-sm-3 col-form-label">Country</label>
+					    <div class="col-sm-8">
+					    <select id="Subject" name="Subject" class="form-control" required>
+							    <option value="Other">Other</option>
+							    <option value="Request">India</option>
+							    <option value="Enquiry">USA</option>
+						</select>
+						</div>
+					</div>
+	            	
+	            	<div class="form-group row">
+					    <label class="col-sm-3 col-form-label" for="address">Address</label>
+					    <div class="col-sm-8">
+					      <textarea class="form-control" type="text" name="address" placeholder="Enter Your Address" required></textarea>
+					    </div>
+					</div>
+	            	<div class="form-group row">
+					<label class="col-sm-3 col-form-label">Verification*</label>
+					<div class="g-recaptcha col-sm-8" data-sitekey="6Lc4YcMZAAAAAHcUNqAqWdYicpwTPemonFsfgsG3" data-theme="light" data-size="normal" data-image="image"></div>
+					<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+					</div>
+
+					<hr style="height:2px;border-width:0;color:gray;background-color:gray;" width= "91%" align="left">
+	                <div class="form-group ">
+	                	<div class="col-sm-10"> 
+	               		<button class="btn btn-lg btn-primary btn-block rounded-pill" type="SUBMIT" onclick="fullvalidate()"> <i class="fas fa-paper-plane"></i> SUBMIT FORM</button>
+	                </div>
+	            </div>
+	            </form>
+	        </div> 
+	</div>
+</body>
+</html>
