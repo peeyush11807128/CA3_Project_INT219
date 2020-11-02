@@ -87,86 +87,178 @@
 	</div>
 
 
- 	<h2 align="center" style="padding-top: 2%; padding-bottom: 2%;">Our Photo Gallery</h1>
+ 	<h2 align="center" style="padding-top: 2%;">Photo Gallery</h1>
 
-    <div class="gallery container" id="gallery">
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211393/lpuuniversity_20201028044609_CG39HunBwEa_uoikgx.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211393/lpuuniversity_20200930130731_CFwwPWvg60C_vmi1wu.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211392/lpuuniversity_20201021044757_CGl7w1Qnc8r_avzujo.jpg" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211392/lpuuniversity_20200927034317_CFoBSM8nyRz_ab5ctc.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200916051852_CFL3epZnJ3s_vjhoem.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211395/lpuuniversity_20201022105032_CGpKDR8HHtY_vqfpo0.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200925064240_CFjMOSnHcp9_djkuxb.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200915074656_CFJjoQpnKiJ_sxtizx.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200913031812_CFD7SPKHm0x_icdvut.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200909071359_CE6DFmPnJT0_uvvj4t.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200903130801_CErO1ZBAJQx_gx1cnu.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200914043457_CFGo3NEn8gS_epcscb.jpg"></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://res.cloudinary.com/ajc/image/upload/v1604211666/122422738_1164821807244826_2928361393573575801_n_ezxq9j.jpg"></div>
-        </div>  
-    </div>
-    <script type="text/javascript">
-	   	var gallery = document.querySelector('#gallery');
-		var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-		var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-		var resizeAll = function () {
-		    var altura = getVal(gallery, 'grid-auto-rows');
-		    var gap = getVal(gallery, 'grid-row-gap');
-		    gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-			var el = item;
-			el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-		    });
-		};
-		gallery.querySelectorAll('img').forEach(function (item) {
-		    item.classList.add('byebye');
-		    if (item.complete) {
-			console.log(item.src);
-		    }
-		    else {
-			item.addEventListener('load', function () {
-			    var altura = getVal(gallery, 'grid-auto-rows');
-			    var gap = getVal(gallery, 'grid-row-gap');
-			    var gitem = item.parentElement.parentElement;
-			    gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-			    item.classList.remove('byebye');
-			});
-		    }
-		});
-		window.addEventListener('resize', resizeAll);
-		gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-		    item.addEventListener('click', function () {        
-			item.classList.toggle('full');        
-		    });
-		});
+    <div class="container" style="display: flex; flex-wrap: wrap; padding-bottom: 2%;">
 
-    </script>
+		<div class="row">
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img1" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211393/lpuuniversity_20201028044609_CG39HunBwEa_uoikgx.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img1">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211393/lpuuniversity_20201028044609_CG39HunBwEa_uoikgx.jpg">
+				</div>
+			</div>
 
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img2" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211393/lpuuniversity_20200930130731_CFwwPWvg60C_vmi1wu.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img2">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211393/lpuuniversity_20200930130731_CFwwPWvg60C_vmi1wu.jpg">
+				</div>
+			</div>
 
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img3" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211392/lpuuniversity_20201021044757_CGl7w1Qnc8r_avzujo.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img3">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211392/lpuuniversity_20201021044757_CGl7w1Qnc8r_avzujo.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img4" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211392/lpuuniversity_20200927034317_CFoBSM8nyRz_ab5ctc.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img4">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211392/lpuuniversity_20200927034317_CFoBSM8nyRz_ab5ctc.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img5" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200916051852_CFL3epZnJ3s_vjhoem.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img5">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200916051852_CFL3epZnJ3s_vjhoem.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img6" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211395/lpuuniversity_20201022105032_CGpKDR8HHtY_vqfpo0.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img6">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211395/lpuuniversity_20201022105032_CGpKDR8HHtY_vqfpo0.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img7" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200925064240_CFjMOSnHcp9_djkuxb.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img7">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200925064240_CFjMOSnHcp9_djkuxb.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img8" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200915074656_CFJjoQpnKiJ_sxtizx.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img8">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211391/lpuuniversity_20200915074656_CFJjoQpnKiJ_sxtizx.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img9" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200913031812_CFD7SPKHm0x_icdvut.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img9">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200913031812_CFD7SPKHm0x_icdvut.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img10" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200909071359_CE6DFmPnJT0_uvvj4t.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img10">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200909071359_CE6DFmPnJT0_uvvj4t.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img11" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200903130801_CErO1ZBAJQx_gx1cnu.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img11">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200903130801_CErO1ZBAJQx_gx1cnu.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img12" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200914043457_CFGo3NEn8gS_epcscb.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img12">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211390/lpuuniversity_20200914043457_CFGo3NEn8gS_epcscb.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img13" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604211666/122422738_1164821807244826_2928361393573575801_n_ezxq9j.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img13">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604211666/122422738_1164821807244826_2928361393573575801_n_ezxq9j.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img14" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604280222/15_hlartn.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img14">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604280222/15_hlartn.jpg">
+				</div>
+			</div>
+
+			<div class="col-md-4 thumb" style="padding-top:2%">
+				<a href="#img15" >
+			        <img src="https://res.cloudinary.com/ajc/image/upload/v1604280308/14_k6okxx.jpg" width="100%" height="100%">
+			    </a>
+			    
+			    <div class="lightbox" id="img15">
+			            <a href="#_" class="btn-close"><i class="fas fa-window-close"></i></a>
+			            <img src="https://res.cloudinary.com/ajc/image/upload/v1604280308/14_k6okxx.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
+	
 
 </body>
 </html>
